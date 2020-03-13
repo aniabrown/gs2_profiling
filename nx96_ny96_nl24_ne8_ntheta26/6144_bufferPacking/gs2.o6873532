@@ -1,0 +1,250 @@
+--------------------------------------------------------------------------------
+*** ambrown3   Job: 6873532.sdb   started: 14/02/20 09:15:44   host: mom1 ***
+*** ambrown3   Job: 6873532.sdb   started: 14/02/20 09:15:44   host: mom1 ***
+*** ambrown3   Job: 6873532.sdb   started: 14/02/20 09:15:44   host: mom1 ***
+*** ambrown3   Job: 6873532.sdb   started: 14/02/20 09:15:44   host: mom1 ***
+
+--------------------------------------------------------------------------------
+PBS_O_WORKDIR = /work/c01/c01/ambrown3/bitbucket_gs2_noFieldReplication/gs2_bufferPacking
+TMPDIR = /tmp
+Currently Loaded Modulefiles:
+  1) modules/3.2.10.6
+  2) nodestat/2.2-1.0502.60539.1.31.ari
+  3) sdb/1.1-1.0502.63652.4.25.ari
+  4) alps/5.2.5-2.0502.9955.44.1.ari
+  5) lustre-cray_ari_s/2.5_3.0.101_0.46.1_1.0502.8871.43.1-1.0502.21728.74.6
+  6) udreg/2.3.2-1.0502.10518.2.17.ari
+  7) ugni/6.0-1.0502.10863.8.29.ari
+  8) gni-headers/4.0-1.0502.10859.9.25.ari
+  9) dmapp/7.0.1-1.0502.11080.8.76.ari
+ 10) xpmem/0.1-2.0502.64982.7.26.ari
+ 11) hss-llm/7.2.0
+ 12) Base-opts/1.0.2-1.0502.60680.2.4.ari
+ 13) craype-network-aries
+ 14) craype-ivybridge
+ 15) craype/2.5.10
+ 16) pbs/13.0.412.192482
+ 17) cray-mpich/7.5.5
+ 18) packages-archer
+ 19) cse-compute-defaults/4.0
+ 20) intel/17.0.0.098
+ 21) cray-libsci/16.11.1
+ 22) pmi/5.0.12
+ 23) atp/2.1.0
+ 24) PrgEnv-intel/5.2.82
+ 25) fftw/3.3.4.11
+ 26) cray-netcdf-hdf5parallel/4.4.1.1
+ 27) cray-hdf5-parallel/1.10.0.1
+ 28) papi/5.5.1.4
+ Job           -1 Running on         6144  processors
+ 
+
+ Job ID:  -1, total from timer is:     0.00 min
+
+ Job           -1 Running on         6144  processors
+ 
+Using unbalanced decomposition for xxf. Unbalanced fraction  0.33
+Using unbalanced decomposition for yxf. Unbalanced fraction  0.33
+  8.365082431595427E-003  :   1.000000000000000E-004
+
+ Initialization             1.24 min    52.1 %
+ Advance steps              1.00 min    42.2 %
+(redistribute               0.316 min   13.3 %)
+(field solve                0.311 min   13.1 %)
+(diagnostics                0.003 min    0.1 %)
+ Re-initialize              0.00 min     0.0 %
+ Finishing                  0.00 min     0.0 %
+ total from timer is:     2.38 min
+
+Application 38970552 resources: utime ~886012s, stime ~2499s, Rss ~298488, inblocks ~33421321, outblocks ~16554247
+
+run ./gs2 with 6144 done in 152 s
+
+INPUT FILE:
+../input_files/big_long_nx_96_ny_96_nl_24_ne_8_ns_2_linkedBoundary_lessDiagnostics_profiling/xyles_nogf_nosplit.in
+&theta_grid_knobs
+equilibrium_option='eik'
+/
+&theta_grid_parameters
+rhoc = 0.4
+ntheta = 26
+nperiod= 1
+/
+&parameters
+beta = 0.04948
+zeff = 1.0
+TiTe = 1.0
+/
+&collisions_knobs
+!collision_model = 'default' 
+!split_collisions = .false.
+use_le_layout = .true.
+collision_model = 'none'
+!collision_model='lorentz'
+/
+!&theta_grid_eik_knobs
+!itor = 1
+!iflux = 1
+!irho = 3
+!ppl_eq = .false.
+!gen_eq = .false.
+!efit_eq = .true.
+!gs2d_eq = .true.
+!local_eq = .false.
+!eqfile = 'equilibrium.dat'
+!equal_arc = .false.
+!bishop = 1
+!s_hat_input = 0.29
+!beta_prime_input = -0.5
+!delrho = 1.e-3
+!isym = 0
+!writelots = .false.
+!/
+&fields_knobs
+field_option='local'
+field_subgath = .false.
+/
+&gs2_diagnostics_knobs
+write_ascii = .false.
+print_flux_line = .f.
+write_flux_line = .f.
+write_nl_flux = .f.
+!print_flux_line = .f.
+!write_flux_line = .f.
+!write_nl_flux = .f.
+write_omega = .false.
+write_omavg = .false.
+write_final_moments = .false.
+write_final_fields=.false.
+print_line=.false.
+write_line=.false.
+save_for_restart=.f.
+!delt_option="check_restart"
+nsave= 10000
+nwrite= 10000
+navg= 200
+omegatol= 1.0e-5
+omegatinst = 500.0
+/
+&le_grids_knobs
+ngauss = 5
+negrid = 8
+/
+&dist_fn_knobs
+boundary_option= "linked"
+gridfac= 1.0
+gf_lo_integrate = .false.
+/
+&init_g_knobs
+!restart_file= "xyles_nogf_nosplit_1000ts.nc"
+ginit_option= "noise"
+!ginit_option= "file"
+phiinit= 1.e-1
+chop_side = .false.
+/
+&kt_grids_knobs
+grid_option='box'
+/
+&kt_grids_box_parameters
+y0 = 10
+ny = 96
+nx = 96
+jtwist = 2
+/
+&knobs
+fphi= 1.0
+fapar= 1.0
+fbpar= 1.0
+faperp= 0.0
+delt= 1.0e-4
+nstep= 3000
+wstar_units = .false.
+immediate_reset = .true.
+!delt_option="check_restart"
+/
+&species_knobs
+nspec= 2
+/
+&species_parameters_1
+type = 'ion'
+z = 1.0
+mass = 1.0
+dens = 1.0
+temp = 1.0
+tprim = 2.04
+fprim = 0.0
+vnewk = 1.0
+uprim = 0.0
+/
+&dist_fn_species_knobs_1
+fexpr = 0.45
+bakdif = 0.05
+/
+&species_parameters_2
+type = 'electron'
+z = -1.0
+mass = 0.01
+dens = 1.0
+temp = 1.0
+tprim = 2.04
+fprim = 0.0
+vnewk = 1.0
+uprim = 0.0
+/
+&dist_fn_species_knobs_2
+fexpr= 0.45
+bakdif= 0.05
+/
+&theta_grid_file_knobs
+gridout_file='grid.out'
+/
+&theta_grid_gridgen_knobs
+npadd = 0
+alknob = 0.0
+epsknob = 1.e-5
+extrknob = 0.0
+tension = 1.0
+thetamax = 0.0
+deltaw = 0.0
+widthw = 1.0
+/
+&source_knobs
+/
+&nonlinear_terms_knobs
+nonlinear_mode='on'
+cfl = 0.5
+/
+&additional_linear_terms_knobs
+/
+&reinit_knobs
+delt_adj = 2.0
+delt_minimum = 1.e-8
+/
+&theta_grid_salpha_knobs
+/
+&hyper_knobs
+/
+&layouts_knobs
+layout = 'xyles'
+unbalanced_xxf = .true.
+max_unbalanced_xxf = 0.5
+unbalanced_yxf = .true.
+max_unbalanced_yxf = 0.5
+opt_local_copy = .true.
+opt_redist_init = .true.
+opt_redist_nbk = .true.
+intmom_sub = .true.
+intspec_sub = .true.
+local_field_solve = .true.
+gf_local_fields = .false.
+/
+--------------------------------------------------------------------------------
+
+Resources requested: ncpus=6144,place=free,walltime=00:07:00
+Resources allocated: cpupercent=5,cput=00:00:01,mem=7076kb,ncpus=6144,vmem=158308kb,walltime=00:02:36
+
+*** ambrown3   Job: 6873532.sdb   ended: 14/02/20 09:18:18   queue: standard ***
+*** ambrown3   Job: 6873532.sdb   ended: 14/02/20 09:18:18   queue: standard ***
+*** ambrown3   Job: 6873532.sdb   ended: 14/02/20 09:18:18   queue: standard ***
+*** ambrown3   Job: 6873532.sdb   ended: 14/02/20 09:18:18   queue: standard ***
+--------------------------------------------------------------------------------

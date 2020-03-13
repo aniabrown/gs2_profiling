@@ -1,0 +1,8 @@
+[
+    {"nprocs": 3072, "version": "bufferPacking", "trial_files": ["gs2.o6871121", "gs2.o6871224", "gs2.o6871964", "gs2.o6873497"]}, 
+    {"nprocs": 3072, "version": "orig", "trial_files": ["gs2.o6873451", "gs2.o6873481", "gs2.o6873514", "gs2.o6873523"]}, 
+    {"nprocs": 6144, "version": "bufferPacking", "trial_files": ["gs2.o6873532", "gs2.o6873595"]}, 
+    {"nprocs": 6144, "version": "orig", "trial_files": ["gs2.o6873589", "gs2.o6873610"]}, 
+    {"nprocs": 6912, "version": "orig", "trial_files": ["gs2.o6873649", "gs2.o6873694"]}, 
+    {"nprocs": 12288, "version": "bufferPacking", "trial_files": ["gs2.o6886878", "gs2.o6886955"]}
+]
