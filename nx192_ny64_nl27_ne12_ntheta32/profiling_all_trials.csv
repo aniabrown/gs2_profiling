@@ -1,0 +1,7 @@
+version, nprocs, field_time, advance_time
+fieldsLocal, 1296, 1.782, 5.40
+fieldsLocal, 1296, 3.434, 9.88
+fieldsLocal, 1296, 3.614, 10.12
+fieldsImplicit, 1296, 3.373, 9.87
+fieldsImplicit, 1296, 3.355, 9.85
+fieldsImplicit, 1296, 3.470, 9.95

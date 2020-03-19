@@ -11,7 +11,8 @@ all_trials_filename = "/".join([geometry_filepath, "profiling_all_trials.csv"])
 import json
 jobs_filename = "/".join([geometry_filepath, "jobs.json"])
 with open(jobs_filename, 'r') as f:
-    jobs = json.load(f)
+    contents = f.read()
+    jobs = json.loads(contents)
 
 with open(all_trials_filename, 'w') as all_trials_file:
     with open(summary_filename, 'w') as summary_file:
