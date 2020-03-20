@@ -1,7 +1,11 @@
-version, nprocs, field_time, advance_time
-fieldsLocal, 1296, 1.782, 5.40
-fieldsLocal, 1296, 3.434, 9.88
-fieldsLocal, 1296, 3.614, 10.12
-fieldsImplicit, 1296, 3.373, 9.87
-fieldsImplicit, 1296, 3.355, 9.85
-fieldsImplicit, 1296, 3.470, 9.95
+version, nprocs, field_time, advance_time, init_time
+fieldsLocal, 1296, 1.782, 5.40, 2.11
+fieldsLocal, 1296, 3.434, 9.88, 8.96
+fieldsLocal, 1296, 3.614, 10.12, 8.97
+fieldsLocal, 1296, 3.757, 10.17, 8.96
+fieldsLocal, 1296, 3.196, 9.75, 8.96
+fieldsImplicit, 1296, 3.373, 9.87, 13.54
+fieldsImplicit, 1296, 3.355, 9.85, 13.46
+fieldsImplicit, 1296, 3.470, 9.95, 13.48
+fieldsImplicit, 1296, 3.650, 10.07, 13.69
+fieldsImplicit, 1296, 3.399, 9.94, 13.29

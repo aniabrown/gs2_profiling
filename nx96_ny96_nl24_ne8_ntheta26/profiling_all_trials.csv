@@ -1,25 +1,25 @@
-version, nprocs, field_time, advance_time
-bufferPacking, 3072, 0.432, 1.25
-bufferPacking, 3072, 0.463, 1.28
-bufferPacking, 3072, 0.626, 1.46
-bufferPacking, 3072, 0.435, 1.25
-bufferPacking, 3072, 0.477, 1.30
-orig, 3072, 1.369, 3.17
-orig, 3072, 1.324, 3.11
-orig, 3072, 1.355, 3.14
-orig, 3072, 1.359, 3.15
-orig, 3072, 1.760, 3.56
-bufferPacking, 6144, 0.311, 1.00
-bufferPacking, 6144, 0.249, 0.94
-bufferPacking, 6144, 0.784, 1.52
-bufferPacking, 6144, 0.745, 1.49
-bufferPacking, 6144, 0.445, 1.14
-orig, 6144, 1.370, 3.05
-orig, 6144, 1.476, 3.15
-orig, 6144, 1.919, 3.64
-orig, 6144, 1.897, 3.64
-orig, 6144, 1.601, 3.27
-orig, 6912, 2.464, 4.16
-orig, 6912, 2.290, 3.98
-bufferPacking, 12288, 0.672, 1.65
-bufferPacking, 12288, 0.670, 1.65
+version, nprocs, field_time, advance_time, init_time
+bufferPacking, 3072, 0.432, 1.25, 1.69
+bufferPacking, 3072, 0.463, 1.28, 1.78
+bufferPacking, 3072, 0.626, 1.46, 1.84
+bufferPacking, 3072, 0.435, 1.25, 1.69
+bufferPacking, 3072, 0.477, 1.30, 1.71
+orig, 3072, 1.369, 3.17, 1.68
+orig, 3072, 1.324, 3.11, 1.67
+orig, 3072, 1.355, 3.14, 1.69
+orig, 3072, 1.359, 3.15, 1.70
+orig, 3072, 1.760, 3.56, 1.81
+bufferPacking, 6144, 0.311, 1.00, 1.24
+bufferPacking, 6144, 0.249, 0.94, 1.21
+bufferPacking, 6144, 0.784, 1.52, 1.37
+bufferPacking, 6144, 0.745, 1.49, 1.40
+bufferPacking, 6144, 0.445, 1.14, 1.27
+orig, 6144, 1.370, 3.05, 1.23
+orig, 6144, 1.476, 3.15, 1.25
+orig, 6144, 1.919, 3.64, 1.39
+orig, 6144, 1.897, 3.64, 1.36
+orig, 6144, 1.601, 3.27, 1.29
+orig, 6912, 2.464, 4.16, 2.27
+orig, 6912, 2.290, 3.98, 2.24
+bufferPacking, 12288, 0.672, 1.65, 1.36
+bufferPacking, 12288, 0.670, 1.65, 1.37

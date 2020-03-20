@@ -3,31 +3,66 @@ import pandas as pd
 
 geometry_filepath = "nx192_ny64_nl27_ne12_ntheta32"
 
-summary_filename = "/".join([geometry_filepath, "profiling_summary.csv"])
+all_trials_filename = "/".join([geometry_filepath, "profiling_all_trials.csv"])
 
-df = pd.read_csv(summary_filename)
+### -----
+
+df = pd.read_csv(all_trials_filename)
 print(df.values)
 plt.close('all')
 
-df_bufferPacking = df[df.version.eq("bufferPacking")]
-df_orig = df[df.version.eq("orig")]
+df_fieldsLocal = df[df.version.eq("fieldsLocal")]
+df_fieldsImplicit = df[df.version.eq("fieldsImplicit")]
 
-plt.figure()
+fig = plt.figure()
 
 ax = plt.gca()
 
-bufferPackingError = df_bufferPacking.values[:,5]*3
-origError = df_orig.values[:,5]*3
+ax1 = df_fieldsLocal.plot.scatter(x=0, y=3, c="red", label='fieldsLocal', ax=ax, marker='x', linewidth=1, s=100)
+ax2 = df_fieldsImplicit.plot.scatter(x=0, y=3, c="blue", label='fieldsImplicit', ax=ax, marker='+', linewidth=1, s=100)
 
-ax1 = df_bufferPacking.plot.scatter(x=1, y=4, yerr=bufferPackingError, c="red", label='bufferPacking', ax=ax)
-ax2 = df_orig.plot.scatter(x=1, y=4, yerr=origError, c="blue", label='orig', ax=ax)
+#ax = df.plot.bar(x=0, y=3, ax=ax)
 
 h1, l1 = ax1.get_legend_handles_labels()
 
-plt.legend(h1, l1, loc=0)
+lgd = plt.legend(h1, l1, loc=(1.04, 0.9))
 plt.xlabel('Number of processes')
 plt.ylabel('Total time for 3000 timesteps (minutes)')
-plt.ylim(0,5)
+plt.ylim(0,11)
+#plt.xlim(1296,1296)
+plt.margins(x=0.3)
 
-output_filename = "/".join([geometry_filepath, "profiling_summary.pdf"])
-plt.savefig(output_filename)
+fig.set_size_inches(4,5)
+output_full_filename = "/".join([geometry_filepath, "profiling_all_trials.pdf"])
+plt.savefig(output_full_filename, bbox_extra_artists=(lgd,), bbox_inches='tight')
+
+### -----
+
+df = pd.read_csv(all_trials_filename)
+print(df.values)
+plt.close('all')
+
+df_fieldsLocal = df[df.version.eq("fieldsLocal")]
+df_fieldsImplicit = df[df.version.eq("fieldsImplicit")]
+
+fig = plt.figure()
+
+ax = plt.gca()
+
+ax1 = df_fieldsLocal.plot.scatter(x=0, y=4, c="red", label='fieldsLocal', ax=ax, marker='x', linewidth=1, s=100)
+ax2 = df_fieldsImplicit.plot.scatter(x=0, y=4, c="blue", label='fieldsImplicit', ax=ax, marker='+', linewidth=1, s=100)
+
+#ax = df.plot.bar(x=0, y=3, ax=ax)
+
+h1, l1 = ax1.get_legend_handles_labels()
+
+lgd = plt.legend(h1, l1, loc=(1.04,0.9))
+plt.xlabel('Number of processes')
+plt.ylabel('Initialization time (minutes)')
+#plt.ylim(0,11)
+#plt.xlim(1296,1296)
+plt.margins(x=0.3)
+
+output_full_filename = "/".join([geometry_filepath, "profiling_init_all_trials.pdf"])
+fig.set_size_inches(4,5)
+plt.savefig(output_full_filename, bbox_extra_artists=(lgd,), bbox_inches='tight')

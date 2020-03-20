@@ -19,8 +19,8 @@ ax = plt.gca()
 bufferPackingError = df_bufferPacking.values[:,5]*3
 origError = df_orig.values[:,5]*3
 
-ax1 = df_bufferPacking.plot.scatter(x=1, y=4, yerr=bufferPackingError, c="red", label='bufferPacking', ax=ax, marker='x')
-ax2 = df_orig.plot.scatter(x=1, y=4, yerr=origError, c="blue", label='orig', ax=ax, marker='x')
+ax1 = df_bufferPacking.plot.scatter(x=1, y=4, yerr=bufferPackingError, c="red", label='bufferPacking', ax=ax, marker='x', linewidth=1, s=50)
+ax2 = df_orig.plot.scatter(x=1, y=4, yerr=origError, c="blue", label='orig', ax=ax, marker='x', linewidth=1, s=50)
 
 h1, l1 = ax1.get_legend_handles_labels()
 
@@ -48,8 +48,8 @@ plt.figure()
 
 ax = plt.gca()
 
-ax1 = df_bufferPacking.plot.scatter(x=1, y=3, c="red", label='bufferPacking', ax=ax, marker='x')
-ax2 = df_orig.plot.scatter(x=1, y=3, c="blue", label='orig', ax=ax, marker='x')
+ax1 = df_bufferPacking.plot.scatter(x=1, y=3, c="red", label='bufferPacking', ax=ax, marker='x', linewidth=1, s=50)
+ax2 = df_orig.plot.scatter(x=1, y=3, c="blue", label='orig', ax=ax, marker='x', linewidth=1, s=50)
 
 h1, l1 = ax1.get_legend_handles_labels()
 
