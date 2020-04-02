@@ -1,8 +1,8 @@
 import subprocess
 from statistics import stdev, mean
 
-geometry_filepath = "nx96_ny96_nl24_ne8_ntheta26"
-#geometry_filepath = "nx192_ny64_nl27_ne12_ntheta32"
+#geometry_filepath = "nx96_ny96_nl24_ne8_ntheta26"
+geometry_filepath = "nx192_ny64_nl27_ne12_ntheta32"
 
 summary_filename = "/".join([geometry_filepath, "profiling_summary.csv"])
 all_trials_filename = "/".join([geometry_filepath, "profiling_all_trials.csv"])

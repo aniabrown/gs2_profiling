@@ -1,5 +1,5 @@
 [
-    {"nprocs": 1296, "version": "fieldsLocal", "trial_files": ["gs2.o6916279", "gs2.o6941874", "gs2.o6941984", "gs2.o6944703", "gs2.o6944983"]}, 
+    {"nprocs": 1296, "version": "fieldsLocal", "trial_files": ["gs2.o6941874", "gs2.o6941984", "gs2.o6944703", "gs2.o6944983"]}, 
     {"nprocs": 1296, "version": "fieldsLocalBufferPacking", "trial_files": ["gs2.o6945257", "gs2.o6950729", "gs2.o6950847", "gs2.o6951447", "gs2.o6952996"]}, 
     {"nprocs": 1296, "version": "fieldsImplicit", "trial_files": ["gs2.o6931396", "gs2.o6931985", "gs2.o6942088", "gs2.o6944523", "gs2.o6944918"]}
 ]
