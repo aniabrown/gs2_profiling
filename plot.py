@@ -42,16 +42,28 @@ print(df.values)
 plt.close('all')
 
 df_bufferPacking = df[df.version.eq("bufferPacking")]
+df_bufferPackingNoSub = df[df.version.eq("bufferPackingNoSub")]
 df_orig = df[df.version.eq("orig")]
 
 plt.figure()
 
 ax = plt.gca()
 
-ax1 = df_bufferPacking.plot.scatter(x=1, y=3, c="red", label='bufferPacking', ax=ax, marker='x', linewidth=1, s=50)
-ax2 = df_orig.plot.scatter(x=1, y=3, c="blue", label='orig', ax=ax, marker='x', linewidth=1, s=50)
+ax1 = df_bufferPacking.plot.scatter(x=1, y=3, c="red", label='bufferPacking', ax=ax, marker='+', linewidth=1, s=20)
+ax3 = df_bufferPackingNoSub.plot.scatter(x=1, y=3, c="orange", label='bufferPackingNoSub', ax=ax, marker='+', linewidth=1, s=20)
+ax2 = df_orig.plot.scatter(x=1, y=3, c="blue", label='orig', ax=ax, marker='+', linewidth=1, s=20)
 
 h1, l1 = ax1.get_legend_handles_labels()
+
+df = pd.read_csv(summary_filename)
+
+df_bufferPacking = df[df.version.eq("bufferPacking")]
+df_bufferPackingNoSub = df[df.version.eq("bufferPackingNoSub")]
+df_orig = df[df.version.eq("orig")]
+
+ax1 = df_bufferPacking.plot.scatter(x=1, y=4, c="red", label='bufferPacking', ax=ax, marker='x', linewidth=1, s=100)
+ax1 = df_bufferPackingNoSub.plot.scatter(x=1, y=4, c="orange", label='bufferPackingNoSub', ax=ax, marker='x', linewidth=1, s=100)
+ax2 = df_orig.plot.scatter(x=1, y=4, c="blue", label='orig', ax=ax, marker='x', linewidth=1, s=100)
 
 plt.legend(h1, l1, loc=0)
 plt.xlabel('Number of processes')
